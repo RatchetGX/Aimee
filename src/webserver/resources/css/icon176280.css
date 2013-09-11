@@ -1,0 +1,525 @@
+/*eg:*/
+/* 图标CSS */
+/**
+  *图片由前后若干部分组成，每部分间由下划线隔开；
+  *第一部分说明图片的大小；
+  *第二部分说明图片的性质，比如按钮（btn）、菜单（横向menu/竖向nav）、背景（bg）等；
+  *第三部分说明图片所属的结构（或组件），例如头部（header）、头像（avator）、装饰（pic）等；
+  *第四部分说明图片是否为鼠标感应（on/off）；
+  *第五部分说明图片所属语言（zh_TW/en_US）；
+  *用后缀名说明图片是否为两倍图（XXX.2x.jpg）
+
+  *注意：类名的命名与图片一致。以上第一和第二部分不可省略，其余部分可依据大原则进行删减。
+
+  *一个完整的例子：icon16_menu_pic_on_zh_TW.2x.png
+*/
+.icon16_page_msg {
+  background: transparent url(/mpres/htmledition/images/icon16_page_msg.png) no-repeat 0 0;
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  display: inline-block;
+}
+.icon16_page_msg.success {
+  background-position: 0 0;
+}
+.icon16_page_msg.waiting {
+  background-position: -16px 0;
+}
+.icon12_opr {
+  background: transparent url(/mpres/htmledition/images/icon12_opr.png) no-repeat 0 0;
+  width: 12px;
+  height: 12px;
+  vertical-align: middle;
+  display: inline-block;
+}
+.icon12_opr.close {
+  background-position: 0 0;
+}
+.icon12_opr.hover.close,
+.icon12_opr:hover.close {
+  background-position: -12px 0;
+}
+.icon32_desc {
+  background: transparent url(/mpres/htmledition/images/icon32_desc.png) no-repeat 0 0;
+  width: 32px;
+  height: 35px;
+  vertical-align: middle;
+  display: inline-block;
+}
+.icon32_desc.IDCard {
+  background-position: -36px 4px;
+}
+.icon32_desc.IDCard.select {
+  background-position: 0 4px;
+}
+.icon32_desc.tel {
+  background-position: -36px -32px;
+}
+.icon32_desc.tel.select {
+  background-position: 0 -32px;
+}
+.icon32_desc.email {
+  background-position: -36px -68px;
+}
+.icon32_desc.email.select {
+  background-position: 0 -68px;
+}
+.icon16_opr {
+  background: transparent url(/mpres/htmledition/images/icon16_opr.png) no-repeat 0 0;
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  display: inline-block;
+}
+.icon16_opr.toggle_left {
+  background-position: 0 0;
+}
+.icon16_opr.toggle_down {
+  background-position: 0 -16px;
+}
+.icon19_opr {
+  background: transparent url(/mpres/htmledition/images/icon19_opr.png) no-repeat 0 0;
+  width: 19px;
+  height: 19px;
+  vertical-align: middle;
+  display: inline-block;
+}
+.icon19_opr.toggle_show {
+  background-position: 0 0;
+}
+.icon19_opr.toggle_hide {
+  background-position: 0 -20px;
+}
+.icon19_opr.toggle_hide_select {
+  background-position: 0 -40px;
+}
+.icon32_status {
+  background: transparent url(/mpres/htmledition/images/icon32_status.png) no-repeat 0 0;
+  width: 32px;
+  height: 32px;
+  vertical-align: middle;
+  display: inline-block;
+}
+.icon32_status.light {
+  background-position: 0 0;
+}
+.icon32_status.light.on {
+  background-position: 0 -32px;
+}
+.icon32_status.tick {
+  background-position: 0 -64px;
+}
+.icon32_status.tick.on {
+  background-position: 0 -96px;
+}
+.icon_verify {
+  background: transparent url(/mpres/htmledition/images/icon_verify.png) no-repeat 0 0;
+  width: 82px;
+  height: 30px;
+  vertical-align: middle;
+  display: inline-block;
+}
+.icon_verify.verifying {
+  background-position: 0 0;
+}
+.icon_verify.verifysucc {
+  background-position: 0 0;
+}
+.icon_verify.verifyfail {
+  background-position: 0 -30px;
+}
+.icon39-step-status {
+  background: transparent url(/mpres/htmledition/images/icon39-step-status.png) no-repeat 0 0;
+  width: 39px;
+  height: 39px;
+  vertical-align: middle;
+  display: inline-block;
+}
+.icon39-step-status.step1 {
+  background-position: 0 0;
+}
+.icon39-step-status.step2 {
+  background-position: -39px 0;
+}
+.icon39-step-status.step3 {
+  background-position: -78px 0;
+}
+.icon39-step-status.step4 {
+  background-position: -116px 0;
+}
+.icon39-step-status.finish {
+  background-position: -155px 0;
+}
+.icon39-step-status.waiting {
+  background-position: -194px 0;
+}
+.icon23-status {
+  background: transparent url(/mpres/htmledition/images/icon23-status.png) no-repeat 0 0;
+  width: 23px;
+  height: 23px;
+  vertical-align: middle;
+  display: inline-block;
+}
+.icon23-status.succ {
+  background-position: 0 0;
+}
+.icon23-status.fail {
+  background-position: -23px 0;
+}
+.icon23-status.stop {
+  background-position: -46px 0;
+}
+.icon55-user-kind {
+  background: transparent url(/mpres/htmledition/images/icon55-user-kind.png) no-repeat 0 0;
+  width: 55px;
+  height: 20px;
+  vertical-align: middle;
+  display: inline-block;
+}
+.icon55-user-kind.enterprise {
+  background-position: 0 0;
+}
+.icon55-user-kind.subscribe {
+  background-position: 0 -21px;
+}
+.icon11-folder-opr {
+  background: transparent url(/mpres/htmledition/images/icon11-folder-opr.png) no-repeat 0 0;
+  width: 11px;
+  height: 11px;
+  vertical-align: middle;
+  display: inline-block;
+}
+.icon11-folder-opr.open {
+  background-position: 0 0;
+}
+.icon11-folder-opr.close {
+  background-position: -13px 0;
+}
+.icon132-pay-reg {
+  background: transparent url(/mpres/htmledition/images/icon132-pay-reg.png) no-repeat 0 0;
+  width: 132px;
+  height: 132px;
+  vertical-align: middle;
+  display: inline-block;
+}
+.icon132-pay-reg.person {
+  background-position: 0 0;
+}
+.icon132-pay-reg.person.on {
+  background-position: -273px 0;
+}
+.icon132-pay-reg.enterprise {
+  background-position: -135px 0;
+}
+.icon132-pay-reg.enterprise.on {
+  background-position: -411px 0;
+}
+/* 特定的icon样式命名为 iconXxx 其中Xxx为具体icon的名字 */
+.icon48 {
+  background: transparent url(/mpres/htmledition/images/icon48.png) no-repeat 0 0;
+  width: 48px;
+  height: 48px;
+  vertical-align: middle;
+  display: block;
+}
+.icon18 {
+  background: transparent url(/mpres/htmledition/images/icon18.png) no-repeat 0 0;
+  width: 18px;
+  height: 18px;
+  vertical-align: middle;
+  display: block;
+}
+.icon28 {
+  background: transparent url(/mpres/htmledition/images/icon28.png) no-repeat 0 0;
+  width: 28px;
+  height: 28px;
+  vertical-align: middle;
+  display: block;
+}
+.icon48C {
+  background: transparent url(/mpres/htmledition/images/icon48.png) no-repeat 0 0;
+  padding-left: 48px;
+}
+.icon28C {
+  background: transparent url(/mpres/htmledition/images/icon28.png) no-repeat 0 0;
+  padding-left: 28px;
+}
+.icon18C {
+  background: transparent url(/mpres/htmledition/images/icon18.png) no-repeat 0 0;
+  padding-left: 18px;
+}
+.iconLoading {
+  background: transparent url(/mpres/htmledition/images/w_loader.gif) no-repeat 0 0;
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+  display: inline-block;
+}
+.iconClose {
+  background: transparent url(/mpres/htmledition/images/closeIcon.png) no-repeat 0 0;
+  width: 23px;
+  height: 24px;
+  vertical-align: middle;
+  display: block;
+}
+.iconNew {
+  background: transparent url(/mpres/htmledition/images/new.png) no-repeat 0 0;
+  width: 43px;
+  height: 20px;
+  vertical-align: middle;
+  display: inline-block;
+  margin-left: 5px;
+  vertical-align: top;
+}
+.iconOK {
+  background: transparent url(/mpres/htmledition/images/ok.gif) no-repeat 0 0;
+  width: 15px;
+  height: 15px;
+  vertical-align: middle;
+  display: block;
+}
+.iconMsg {
+  background-position: 0 0;
+}
+.iconUser {
+  background-position: 0 -58px;
+}
+.iconFile {
+  background-position: 0 -116px;
+}
+.iconSetting {
+  background-position: 0 -174px;
+}
+.iconStar {
+  background-position: 0px 2px;
+}
+.iconStar:hover {
+  background-position: -28px 2px;
+}
+.iconUnstar {
+  background-position: 0px -26px;
+}
+.iconUnstar:hover {
+  background-position: -28px -26px;
+}
+.iconSave {
+  background-position: 0px -54px;
+}
+.iconSave:hover {
+  background-position: -28px -54px;
+}
+.iconReply {
+  background-position: 0px -455px;
+}
+.iconReply:hover {
+  background-position: -28px -455px;
+}
+.iconAdd {
+  background-position: 0px -81px;
+}
+.iconAddS {
+  background-position: 0px -112px;
+}
+.iconEdit {
+  background-position: 0px -139px;
+}
+.iconEdit:hover {
+  background-position: -28px -139px;
+}
+.selected .iconEdit {
+  background-position: 0px -337px;
+}
+.selected .iconEdit:hover {
+  background-position: 0px -337px;
+}
+.iconDownload {
+  background-position: 0px -166px;
+}
+.iconDownload:hover {
+  background-position: -28px -166px;
+}
+.iconDel {
+  background-position: 0px -195px;
+}
+.iconDel:hover {
+  background-position: -28px -195px;
+}
+.selected .iconDel {
+  background-position: 0px -368px;
+}
+.selected .iconDel:hover {
+  background-position: 0px -368px;
+}
+.iconSexBoy {
+  background-position: 0px -224px;
+}
+.iconSexGirl {
+  background-position: 0px -252px;
+}
+.iconEmotion {
+  background-position: 0px -306px;
+}
+.iconPackup {
+  background-position: 0px -280px;
+}
+.iconPackup:hover {
+  background-position: -28px -280px;
+}
+.iconArrow {
+  background: transparent url(/mpres/htmledition/images/arrow.png) no-repeat 0 0;
+  width: 12px;
+  height: 15px;
+  vertical-align: middle;
+  display: inline-block;
+}
+.iconAudio {
+  background: transparent url(/mpres/htmledition/images/icon_voice_playing.gif) no-repeat 0 0;
+  width: 17px;
+  height: 21px;
+  vertical-align: middle;
+  display: inline-block;
+}
+.iconVideo {
+  background: transparent url(/mpres/htmledition/images/icon_video.png) no-repeat 0 0;
+  width: 36px;
+  height: 36px;
+  vertical-align: middle;
+  display: inline-block;
+}
+.iconImgSelect {
+  background-position: 0px 0px;
+}
+.iconVideoSelect {
+  background-position: 0px -38px;
+}
+.iconVoiceSelect {
+  background-position: 0px -76px;
+}
+.iconEditB {
+  background-position: 0px -337px;
+}
+.iconDelB {
+  background-position: 0px -368px;
+}
+.iconQues {
+  background-position: 0px -427px;
+}
+.iconProtocol {
+  background: transparent url(/mpres/htmledition/images/icon_mod_protocel.png) no-repeat 0 0;
+  width: 146px;
+  height: 146px;
+  vertical-align: middle;
+  display: block;
+}
+.user-icon {
+  background: transparent url(/mpres/htmledition/images/icon-user-tip.png) no-repeat 0 0;
+  width: 56px;
+  height: 56px;
+  vertical-align: middle;
+  display: inline-block;
+}
+.user-icon .success-icon {
+  background-position: 0 -67px;
+}
+.user-icon .waiting-icon {
+  background-position: 0 -136px;
+}
+.user-icon .fail-icon {
+  background-position: 0 0;
+}
+.user-icon .error-icon {
+  background-position: 0 -205px;
+}
+.user-icon .email-icon {
+  background-position: 0 -272px;
+}
+.user-icon.fail-icon {
+  background-position: 0 0;
+}
+.user-icon.success-icon {
+  background-position: 0 -67px;
+}
+.user-icon.waiting-icon {
+  background-position: 0 -136px;
+}
+.user-icon.error-icon {
+  background-position: 0 -205px;
+}
+.user-icon.email-icon {
+  background-position: 0 -272px;
+}
+.add_on_icon24 {
+  background: transparent url(/mpres/htmledition/images/icon24_add_on.png) no-repeat 0 0;
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+  display: inline-block;
+}
+.add_on_icon24.success {
+  background-position: 0 0;
+}
+.add_on_icon14 {
+  background: transparent url(/mpres/htmledition/images/icon_success_blue.png) no-repeat 0 0;
+  width: 14px;
+  height: 14px;
+  vertical-align: middle;
+  display: inline-block;
+}
+.add_on_icon14.success {
+  background-position: 0 0;
+}
+.add_on_icon32 {
+  background: transparent url(/mpres/htmledition/images/icon32_status.png) no-repeat 0 0;
+  width: 32px;
+  height: 32px;
+  vertical-align: middle;
+  display: inline-block;
+}
+.add_on_icon32.success,
+.add_on_icon32.light {
+  background-position: 0 -32px;
+}
+.add_on_icon50 {
+  background: transparent url(/mpres/htmledition/images/icon50_status.png) no-repeat 0 0;
+  width: 50px;
+  height: 50px;
+  vertical-align: middle;
+  display: inline-block;
+}
+.add_on_icon50.success {
+  background-position: 0 -50px;
+}
+.icon-user {
+  background: transparent url(/mpres/htmledition/images/new/icon_user.png) no-repeat 0 0;
+  width: 64px;
+  height: 64px;
+  vertical-align: middle;
+  display: inline-block;
+}
+.icon-user.qq {
+  background-position: -1px -4px;
+}
+.icon-user.email {
+  background-position: -1px -73px;
+}
+.icon-switch {
+  background: transparent url(/mpres/htmledition/images/new/icon_switch.png) no-repeat 0 0;
+  width: 22px;
+  height: 22px;
+  vertical-align: middle;
+  display: inline-block;
+}
+.icon-switch.arrow-right {
+  background-position: 0 0;
+}
+.icon20_tip {
+  background: transparent url(/mpres/htmledition/images/icon20_tip.png) no-repeat 0 0;
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  display: inline-block;
+}
+.icon20_tip.speaker {
+  background-position: 0 0;
+}
