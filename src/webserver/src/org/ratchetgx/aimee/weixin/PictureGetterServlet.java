@@ -16,7 +16,7 @@ import org.slf4j.LoggerFactory;
 
 public class PictureGetterServlet extends HttpServlet {
 	
-	private static Logger log = LoggerFactory.getLogger(WeixinService.class);
+	private Logger log = LoggerFactory.getLogger(this.getClass());
 
 	@Override
 	public void service(ServletRequest request, ServletResponse response)

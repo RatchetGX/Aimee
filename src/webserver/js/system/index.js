@@ -188,7 +188,7 @@ function doOnSwitchCustomerTab(sNewPanel) {
 */
 
 /** 向客户发送消息 */ 
-function sendMsgToCustomer2() {
+function sendTextMsgToCustomer2() {
 	//var sKh_khbh = selectedKh_khbh;
 	//var sKh_openid = selectedKh_openid;
 	
@@ -336,7 +336,7 @@ function getQPlayer(u, w, h) {
 	return pv;
 } 
 
-function uploadImageFile() {
+function sendImgMsgToCustomer2() {
 	
 	var sHost = window.location.hostname;
     var sPort = window.location.port;
@@ -349,6 +349,7 @@ function uploadImageFile() {
 	var sMsgSender = gKf_kfhm;
 	var thistab = $('#tabs').tabs('getSelected');
 	var sKh_khbh = thistab.panel('options').khbh;
+	var sKh_openid = thistab.panel('options').openid;
 	var sNowStr = getNowStr();
 	
 	$('#inputWordsForm_' + sKh_khbh).ajaxSubmit({
@@ -358,6 +359,7 @@ function uploadImageFile() {
 	     success: function(data){
 	         var sMsg_picurl = picUrl + sCtx + "/imageDisplay?filename=" + data.filename;
 	         addImgMsgToDialogueWordsArea(sMsgSender, sMsg_picurl, sKh_khbh, sNowStr);
+	         sendImgMsgToCustomer(sKh_khbh, sKh_openid, data.filename)
 	     }
 	}); 
 }

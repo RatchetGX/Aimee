@@ -85,8 +85,8 @@
 
 	              <textarea rows="2" cols="68" style="overflow-x:hidden;overflow-y:auto"></textarea>
 	              <input type="file" name="file_upload"/>
-	             <a class="easyui-linkbutton" href="#" onclick="uploadImageFile()" style="margin-right:32px;float:right;"> 上传 </a>
-	             <a class="easyui-linkbutton" href="#" onclick="sendMsgToCustomer2()" style="margin-right:32px;float:right;"> 发 送 </a>
+	             <a class="easyui-linkbutton" href="#" onclick="sendImgMsgToCustomer2()" style="margin-right:32px;float:right;">发图片 </a>
+	             <a class="easyui-linkbutton" href="#" onclick="sendTextMsgToCustomer2()" style="margin-right:32px;float:right;"> 发 送 </a>
 	</form>
 	
 	  <div id="jquery_jplayer_1" class="jp-jplayer" style="display:none"></div>

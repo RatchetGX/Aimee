@@ -6,11 +6,16 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.ratchetgx.aimee.common.webbase.HttpMultipartRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -194,7 +199,7 @@ public class WeixinService {
 	}
 	
 	/** 向用户发图片消息 */
-	public static boolean sendImgMsgToUser(String openid, String sMsg_fileName) throws IOException {
+	public static boolean sendImgMsgToUser(String openid, String sFileName, String sFilePath) throws IOException {
 		
 		boolean bSuccess = false;
 		
@@ -203,20 +208,39 @@ public class WeixinService {
 			return bSuccess;
 		}
 		
-		////////////////////
-		String sMedia_id = "";
-		String urlStr =  "http://api.weixin.qq.com/cgi-bin/media/upload?"
-			      +  "access_token=" + sAccessToken + "&type=image";
-		URL url = new URL(urlStr);
-		URLConnection conn = url.openConnection();
-		///////////////
 		
+		log.debug("sFileName:" + sFileName);
+		log.debug("sFilePath:" + sFilePath);
 		
+		/** 上传图片 */
+		String urlStr = "http://api.weixin.qq.com/cgi-bin/media/upload?"
+			      + "access_token=" + sAccessToken + "&type=image";  
+        Map<String, String> textMap = new HashMap<String, String>();  
+        textMap.put("name", "testname");  
+        Map<String, String> fileMap = new HashMap<String, String>();  
+        fileMap.put("media", sFilePath);  
+        String retStr = HttpMultipartRequest.postForm(urlStr, textMap, fileMap);  
+        log.info("upload image url return:" + retStr);  
+        
+        String sMedia_id = "";
+        JSONObject sJsonObj;
+		try {
+			sJsonObj = new JSONObject(retStr);
+			sMedia_id = sJsonObj.getString("media_id");
+		} catch (JSONException e) {
+			e.printStackTrace();
+			log.info(e.getMessage());
+			log.info("upload image failed:" + retStr);
+			return false;
+		}
+        
+        
+		/** 发送图片 */
 		log.info("sendImgMsgToUser:openid:" + openid);
 		urlStr =  "https://api.weixin.qq.com/cgi-bin/message/custom/send?"
 				      +  "access_token=" + sAccessToken;
-		url = new URL(urlStr); 
-        conn = url.openConnection(); 
+		URL url = new URL(urlStr); 
+		URLConnection conn = url.openConnection(); 
         
         /** 发送消息 */
         conn.setDoOutput(true);   
@@ -250,7 +274,6 @@ public class WeixinService {
         String urlRetStr = sb.toString();
         log.info("send msg return：" + urlRetStr);
         
-        JSONObject sJsonObj;
 		try {
 			sJsonObj = new JSONObject(urlRetStr);
 			String errcode = sJsonObj.getString("errcode");

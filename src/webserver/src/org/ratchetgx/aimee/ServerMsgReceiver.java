@@ -36,6 +36,8 @@ public class ServerMsgReceiver extends WebSocketServlet {
 		
 		final ServletContext application = request.getServletContext();
 		
+		final String appRootPath = request.getSession().getServletContext().getRealPath("/");
+		
 		return new MessageInbound() {
 			
 	        /* 
@@ -70,11 +72,12 @@ public class ServerMsgReceiver extends WebSocketServlet {
 						WeixinService.sendTextMsgToUser(sKh_openid, sMsg_content);
 						
 					} else if ("image".equals(sType)) { /** 图片消息 */
-						
 						String sKh_khbh = sJsonSendMsg.getString("khbh");
 						String sKh_openid = sJsonSendMsg.getString("openid");
-						String sMsg_fileName = sJsonSendMsg.getString("fileName");
-						WeixinService.sendImgMsgToUser(sKh_openid, sMsg_fileName);
+						String sFileName = sJsonSendMsg.getString("fileName");
+						
+						String sFilePath = appRootPath + "attachments/" + sFileName;
+						WeixinService.sendImgMsgToUser(sKh_openid, sFileName, sFilePath);
 						
 					}
 				} catch (JSONException e) {
