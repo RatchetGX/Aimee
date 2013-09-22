@@ -49,10 +49,10 @@ public class OnlineCustomerService {
 	            
 	            bSuccess = true;
 			} catch (IOException e) {
-				log.info(e.getMessage());
+				log.error("向在线客服发送消息出错：", e);
 				e.printStackTrace();
 			}
-        }
+        } 
 	        
         
         if (bSuccess) {

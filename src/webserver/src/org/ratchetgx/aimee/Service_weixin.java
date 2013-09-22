@@ -136,11 +136,10 @@ public class Service_weixin extends HttpServlet{
 		String sKh_khbh = slkhxxService.recordCustomerToDB(sCustomerInfo);
 		
 		/** 获取可用的在线客服编号 */
-		//final String sKf_kfbh = "070f1a72-e7c7-11e2-942d-78e40091f9ae"; //对应10086
 		final String sKf_kfbh = getAvaliableOnlineKfbh(sKh_khbh);
 		if (sKf_kfbh == null) {
 			/** TODO:作为无响应的请求保存到数据库：库结构未设计 */
-			log.info("未找到在线客服，服务器响应中止！");
+			log.error("未找到在线客服，服务器响应中止！");
 			return;
 		}
 		
