@@ -138,8 +138,19 @@ public class Service_weixin extends HttpServlet{
 		/** 获取可用的在线客服编号 */
 		final String sKf_kfbh = getAvaliableOnlineKfbh(sKh_khbh);
 		if (sKf_kfbh == null) {
-			/** TODO:作为无响应的请求保存到数据库：库结构未设计 */
 			log.error("未找到在线客服，服务器响应中止！");
+			
+			/** 保存消息到数据库 */
+			Map sMsgInfo = new HashMap();
+			sMsgInfo.put("kh_khbh", sKh_khbh);
+			sMsgInfo.put("kf_kfbh", null);
+			sMsgInfo.put("msg_id", sMsg_msgid);
+			sMsgInfo.put("msg_type", sMsg_msgtype);
+			sMsgInfo.put("msg_content", sMsg_content);
+			sMsgInfo.put("msg_sendtime", sdf.format(new Date()));
+			sMsgInfo.put("msg_sendstatus", "0");
+			boolean bSuccess = hhxxService.recordMsgToDB(sMsgInfo);
+			
 			return;
 		}
 		
@@ -173,7 +184,7 @@ public class Service_weixin extends HttpServlet{
 		boolean bSuccess = OnlineCustomerService.sendMsgToOnlineKf(sKf_kfbh, sJsonMsg);
 		
 		
-		/** 保存会话-消息到数据库 */
+		/** 保存消息到数据库 */
 		Map sMsgInfo = new HashMap();
 		sMsgInfo.put("kh_khbh", sKh_khbh);
 		sMsgInfo.put("kf_kfbh", sKf_kfbh);
